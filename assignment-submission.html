@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>SSTMS — Submit assignment</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+  .upload-zone{
+    border:2px dashed var(--border);
+    border-radius:var(--radius);
+    padding:32px;
+    text-align:center;
+    color:var(--text-muted);
+    font-size:14px;
+    margin-bottom:18px;
+    cursor:pointer;
+  }
+  .upload-zone.dragover{border-color:var(--navy);color:var(--navy);background:#F0F4F8;}
+  .countdown{font-weight:600;color:var(--danger);}
+</style>
+</head>
+<body>
+<div class="main" style="max-width:720px;margin:0 auto;">
+  <a href="class-detail.html" style="font-size:13px;">&larr; Back to class</a>
+  <h1 style="margin-top:10px;">Binary tree implementation</h1>
+  <p class="subtitle">Data structures · Section A · Max score 100</p>
+
+  <div class="card" style="margin-bottom:20px;">
+    <p style="margin:0 0 8px;font-size:14px;">
+      Implement insert, delete, and in-order traversal for a binary search tree. Submit your
+      source file and a short written explanation below.
+    </p>
+    <p style="margin:0;font-size:13px;">
+      Deadline: <span class="countdown" id="countdown">2 days 4 hours remaining</span>
+    </p>
+  </div>
+
+  <form id="submitForm">
+    <label>Attach file</label>
+    <div class="upload-zone" id="uploadZone">
+      <div id="uploadLabel">Drag a file here, or click to browse<br><span style="font-size:12px;">.zip, .java, .pdf up to 25MB</span></div>
+      <input type="file" id="fileInput" class="hidden">
+    </div>
+
+    <div class="field">
+      <label for="explanation">Written explanation</label>
+      <textarea id="explanation" rows="6" placeholder="Briefly explain your approach..."></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary btn-block">Submit assignment</button>
+  </form>
+</div>
+
+<script src="app.js"></script>
+<script>
+  const zone = document.getElementById('uploadZone');
+  const fileInput = document.getElementById('fileInput');
+  const uploadLabel = document.getElementById('uploadLabel');
+
+  zone.addEventListener('click', () => fileInput.click());
+  zone.addEventListener('dragover', (e) => { e.preventDefault(); zone.classList.add('dragover'); });
+  zone.addEventListener('dragleave', () => zone.classList.remove('dragover'));
+  zone.addEventListener('drop', (e) => {
+    e.preventDefault();
+    zone.classList.remove('dragover');
+    if(e.dataTransfer.files.length) showFile(e.dataTransfer.files[0]);
+  });
+  fileInput.addEventListener('change', () => {
+    if(fileInput.files.length) showFile(fileInput.files[0]);
+  });
+  function showFile(file){
+    uploadLabel.innerHTML = '📎 ' + file.name + '<br><span style="font-size:12px;">' + Math.round(file.size/1024) + ' KB selected</span>';
+  }
+
+  document.getElementById('submitForm').addEventListener('submit', (e) => {
+    e.preventDefault();
+    // NOTE: replace with multipart POST /api/v1/assignments/{id}/submit
+    alert('Demo only — would upload file + explanation to the backend.');
+    go('class-detail.html');
+  });
+</script>
+</body>
+</html>

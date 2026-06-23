@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SSTMS — Student Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+
+<div class="topbar">
+    <div class="brand">
+        <span class="dot"></span>SSTMS
+    </div>
+
+    <div class="topbar-actions">
+        <span>Anjali Perera</span>
+        <a href="login.html">Log out</a>
+    </div>
+</div>
+
+<div class="app-shell">
+
+    <div class="sidebar">
+        <a class="active" href="student-dashboard.html">🏠 Dashboard</a>
+        <a href="class-detail.html">📘 My Classes</a>
+        <a href="assignment-submission.html">📝 Assignments</a>
+        <a href="#" onclick="attendanceHistory()">🗓️ Attendance</a>
+        <a href="#" onclick="viewGrades()">🎯 Grades</a>
+    </div>
+
+    <div class="main">
+
+        <h1>My Dashboard</h1>
+        <p class="subtitle">Welcome back, Anjali</p>
+
+        <div class="grid grid-3">
+
+            <div class="stat-card">
+                <p class="label">Enrolled Classes</p>
+                <p class="value">5</p>
+            </div>
+
+            <div class="stat-card">
+                <p class="label">Pending Assignments</p>
+                <p class="value">3</p>
+            </div>
+
+            <div class="stat-card">
+                <p class="label">Attendance</p>
+                <p class="value">92%</p>
+            </div>
+
+        </div>
+
+        <h3>My Classes</h3>
+
+        <div class="grid grid-3">
+
+            <div class="card clickable-card"
+                 onclick="go('class-detail.html')">
+                <p class="card-title">Data Structures</p>
+                <p class="card-meta">Mr. Fernando · Sec A</p>
+            </div>
+
+            <div class="card clickable-card"
+                 onclick="go('class-detail.html')">
+                <p class="card-title">Database Systems</p>
+                <p class="card-meta">Ms. Perera · Sec B</p>
+            </div>
+
+        </div>
+
+        <h3>Pending Assignments</h3>
+
+        <div class="list-row clickable-card"
+             onclick="go('assignment-submission.html')">
+
+            <div>
+                <p class="title">Binary Tree Implementation</p>
+                <p class="meta">Data Structures</p>
+            </div>
+
+            <span class="badge badge-amber">
+                Due in 2 days
+            </span>
+        </div>
+
+        <div class="list-row clickable-card"
+             onclick="go('assignment-submission.html')">
+
+            <div>
+                <p class="title">ER Diagram Submission</p>
+                <p class="meta">Database Systems</p>
+            </div>
+
+            <span class="badge badge-muted">
+                Due in 6 days
+            </span>
+        </div>
+
+    </div>
+
+</div>
+
+<script src="dashboard.js"></script>
+
+</body>
+</html>

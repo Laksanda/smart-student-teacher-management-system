@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SSTMS — Super Admin</title>
+    <link rel="stylesheet" href="admin-dashboard.css">
+</head>
+<body>
+
+<div class="topbar">
+    <div class="brand">
+        <span class="dot"></span>SSTMS
+    </div>
+
+    <div class="topbar-actions">
+        <span>Super Admin</span>
+        <a href="login.html">Log out</a>
+    </div>
+</div>
+
+<div class="app-shell">
+
+    <div class="sidebar">
+        <a class="active" href="admin-dashboard.html">📊 Overview</a>
+        <a href="#" onclick="teacherApprovals()">✅ Teacher approvals</a>
+        <a href="#" onclick="courseManagement()">📚 Courses</a>
+        <a href="#" onclick="userManagement()">👥 Users</a>
+        <a href="#" onclick="auditLog()">🧾 Audit log</a>
+        <a href="#" onclick="announcements()">📢 Announcements</a>
+    </div>
+
+    <div class="main">
+
+        <h1>System Overview</h1>
+        <p class="subtitle">Snapshot of activity across SSTMS</p>
+
+        <div class="grid grid-4">
+            <div class="stat-card">
+                <p class="label">Total Users</p>
+                <p class="value">1,284</p>
+            </div>
+
+            <div class="stat-card">
+                <p class="label">Active Teachers</p>
+                <p class="value">42</p>
+            </div>
+
+            <div class="stat-card">
+                <p class="label">Active Students</p>
+                <p class="value">1,198</p>
+            </div>
+
+            <div class="stat-card">
+                <p class="label">Pending Approvals</p>
+                <p class="value">5</p>
+            </div>
+        </div>
+
+        <h3>Pending Teacher Approvals</h3>
+
+        <div class="list-row">
+            <div>
+                <p class="title">D. Wickramasinghe</p>
+                <p class="meta">MSc Computer Science · Department of Computing</p>
+            </div>
+
+            <div class="button-group">
+                <button class="btn btn-primary btn-sm"
+                        onclick="approveTeacher()">
+                    Approve
+                </button>
+
+                <button class="btn btn-sm"
+                        onclick="rejectTeacher()">
+                    Reject
+                </button>
+            </div>
+        </div>
+
+        <div class="list-row">
+            <div>
+                <p class="title">R. Jayasuriya</p>
+                <p class="meta">BSc Mathematics · Department of Mathematics</p>
+            </div>
+
+            <div class="button-group">
+                <button class="btn btn-primary btn-sm"
+                        onclick="approveTeacher()">
+                    Approve
+                </button>
+
+                <button class="btn btn-sm"
+                        onclick="rejectTeacher()">
+                    Reject
+                </button>
+            </div>
+        </div>
+
+        <h3 class="announcement-heading">System Announcements</h3>
+
+        <div class="card">
+            <p class="title">
+                Scheduled Maintenance — Saturday 2 AM
+            </p>
+
+            <p class="meta">
+                Visible on all student and teacher dashboards.
+            </p>
+        </div>
+
+    </div>
+</div>
+
+<script src="admin.dashbord.js"></script>
+
+</body>
+</html>
