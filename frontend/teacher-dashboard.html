@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SSTMS — Teacher Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+
+<div class="topbar">
+    <div class="brand">
+        <span class="dot"></span>
+        SSTMS
+    </div>
+
+    <div class="topbar-actions">
+        <span>Mr. Fernando</span>
+        <a href="login.html">Log out</a>
+    </div>
+</div>
+
+<div class="app-shell">
+
+    <div class="sidebar">
+        <a class="active" href="teacher-dashboard.html">🏠 Dashboard</a>
+        <a href="class-detail.html">📘 My Classes</a>
+        <a href="#" onclick="openMaterials()">📁 Materials</a>
+        <a href="#" onclick="createAssignment()">📝 Assignments</a>
+        <a href="#" onclick="markAttendance()">🗓️ Attendance</a>
+    </div>
+
+    <div class="main">
+
+        <div class="header-section">
+            <div>
+                <h1>My Classes</h1>
+                <p class="subtitle">Sections you teach this term</p>
+            </div>
+
+            <button class="btn btn-primary" onclick="createSection()">
+                + New Section
+            </button>
+        </div>
+
+        <div class="grid grid-3">
+
+            <div class="card clickable-card" onclick="goToClassDetail()">
+                <p class="card-title">Data Structures · Sec A</p>
+                <p class="card-meta">32 students</p>
+            </div>
+
+            <div class="card clickable-card" onclick="goToClassDetail()">
+                <p class="card-title">Data Structures · Sec B</p>
+                <p class="card-meta">28 students</p>
+            </div>
+
+        </div>
+
+        <h3>Recent Submissions</h3>
+
+        <div class="list-row">
+            <div>
+                <p class="title">Kavindu S. — Binary Tree Implementation</p>
+                <p class="meta">Submitted 1 hour ago</p>
+            </div>
+
+            <button class="btn btn-sm" onclick="gradeSubmission()">
+                Grade
+            </button>
+        </div>
+
+        <div class="list-row">
+            <div>
+                <p class="title">Nimasha R. — Binary Tree Implementation</p>
+                <p class="meta">Submitted 3 hours ago</p>
+            </div>
+
+            <button class="btn btn-sm" onclick="gradeSubmission()">
+                Grade
+            </button>
+        </div>
+
+        <h3 class="section-title">Upcoming Sessions</h3>
+
+        <div class="list-row">
+            <div>
+                <p class="title">Data Structures · Sec A</p>
+                <p class="meta">Monday, 9:00 AM</p>
+            </div>
+
+            <span class="badge badge-amber">
+                Today
+            </span>
+        </div>
+
+    </div>
+
+</div>
+
+<script src="dashboard.js"></script>
+
+</body>
+</html>

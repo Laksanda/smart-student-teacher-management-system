@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>SSTMS — Log in</title>
+  <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+  <div class="auth-wrap">
+    <div class="auth-card">
+      <h1>Welcome back</h1>
+      <p class="subtitle">Log in to your SSTMS account</p>
+
+      <form id="loginForm">
+        <div class="field">
+          <label for="email">Email address</label>
+          <input id="email" type="email" placeholder="you@example.com" required>
+        </div>
+        <div class="field">
+          <label for="password">Password</label>
+          <input id="password" type="password" placeholder="Your password" required>
+          <div class="error-text" id="loginError">Incorrect email or password.</div>
+        </div>
+        <div style="display:flex;justify-content:flex-end;margin-bottom:18px;">
+          <a href="#" style="font-size:13px;">Forgot password?</a>
+        </div>
+
+        <!-- Demo-only role picker so you can preview each dashboard without a real backend -->
+        <div class="field">
+          <label for="demoRole">Demo: log in as</label>
+          <select id="demoRole">
+            <option value="student">Student</option>
+            <option value="teacher">Teacher</option>
+            <option value="admin">Super Admin</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block">Log in</button>
+      </form>
+
+      <p class="auth-foot">New here? <a href="index.html">Create an account</a></p>
+    </div>
+  </div>
+
+  <script src="login.js"></script>
+
+</body>
+
+</html>
